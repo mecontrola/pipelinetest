@@ -1,0 +1,43 @@
+name: .NET
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+        build-configuration: [ 'Debug' ]
+
+    steps:
+    - name: Clone MeControla.Packages
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GIT_TOKEN }}
+        repository: mecontrola/MeControla.Packages
+        path: ./MeControla
+
+    - name: Move Files to Parent Directory
+      run: |
+        mv ${{ github.workspace }}/MeControla/* ${{ github.workspace }}/../MeControla
+        ls -l ${{ github.workspace }}/../MeControla
+
+    - name: Checkout Branch
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET ${{ matrix.dotnet-version }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Restore Dependencies
+      run: dotnet restore --nologo --verbosity=minimal --force
+
+    - name: Build Solution
+      run: dotnet build --nologo --verbosity=minimal --no-restore --configuration ${{ matrix.build-configuration }}
+
+    - name: Test Solution
+      run: dotnet test --nologo --verbosity=minimal --no-restore --no-build --configuration ${{ matrix.build-configuration }}

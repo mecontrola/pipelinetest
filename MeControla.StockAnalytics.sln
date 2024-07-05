@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.WPF", "MeControla.StockAnalytics.WPF\MeControla.StockAnalytics.WPF.csproj", "{94521A7E-2ED4-4C67-B1F4-87D2BD4D46F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.Data", "MeControla.StockAnalytics.Data\MeControla.StockAnalytics.Data.csproj", "{BE597FC0-6126-467F-8E84-30F11A78F9C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.DataStorage", "MeControla.StockAnalytics.DataStorage\MeControla.StockAnalytics.DataStorage.csproj", "{D24B2CC1-9C3D-40F3-B63C-EFEA5905446D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.Core", "MeControla.StockAnalytics.Core\MeControla.StockAnalytics.Core.csproj", "{BBE11B6B-6BE3-4A1F-95CA-AE8473FDE3D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.Data.Dtos", "MeControla.StockAnalytics.Data.Dtos\MeControla.StockAnalytics.Data.Dtos.csproj", "{180B6C9B-20C6-4DC9-BD55-E54D8787D17C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MeControla", "MeControla", "{A188D092-08DE-40A6-B7ED-1A9505E82215}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.Core.Integrations.B3", "..\MeControla\MeControla.Core.Integrations.B3\MeControla.Core.Integrations.B3.csproj", "{EC88E1C7-72C0-4BA1-B921-345A675EE452}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.Core.WPF", "..\MeControla\MeControla.Core.WPF\MeControla.Core.WPF.csproj", "{8117B139-F07B-46FA-93C6-4D752FD5560A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.Core.Integrations", "..\MeControla\MeControla.Core.Integrations\MeControla.Core.Integrations.csproj", "{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNetCore.WPF", "..\MeControla\Microsoft.DotNetCore.WPF\Microsoft.DotNetCore.WPF.csproj", "{270FEA29-7EA8-429F-A12C-4BBDAB1706C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.StockAnalytics.Core.Tests", "MeControla.StockAnalytics.Core.Tests\MeControla.StockAnalytics.Core.Tests.csproj", "{AC91BF16-634A-4664-BF8F-A7661EEA2E43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeControla.Core.TestingTools", "..\MeControla\MeControla.Core.TestingTools\MeControla.Core.TestingTools.csproj", "{578380FB-8644-4777-9AEC-441F78FF57A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94521A7E-2ED4-4C67-B1F4-87D2BD4D46F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94521A7E-2ED4-4C67-B1F4-87D2BD4D46F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94521A7E-2ED4-4C67-B1F4-87D2BD4D46F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94521A7E-2ED4-4C67-B1F4-87D2BD4D46F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE597FC0-6126-467F-8E84-30F11A78F9C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE597FC0-6126-467F-8E84-30F11A78F9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE597FC0-6126-467F-8E84-30F11A78F9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE597FC0-6126-467F-8E84-30F11A78F9C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24B2CC1-9C3D-40F3-B63C-EFEA5905446D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24B2CC1-9C3D-40F3-B63C-EFEA5905446D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24B2CC1-9C3D-40F3-B63C-EFEA5905446D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24B2CC1-9C3D-40F3-B63C-EFEA5905446D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE11B6B-6BE3-4A1F-95CA-AE8473FDE3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE11B6B-6BE3-4A1F-95CA-AE8473FDE3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE11B6B-6BE3-4A1F-95CA-AE8473FDE3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE11B6B-6BE3-4A1F-95CA-AE8473FDE3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180B6C9B-20C6-4DC9-BD55-E54D8787D17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180B6C9B-20C6-4DC9-BD55-E54D8787D17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180B6C9B-20C6-4DC9-BD55-E54D8787D17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180B6C9B-20C6-4DC9-BD55-E54D8787D17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC88E1C7-72C0-4BA1-B921-345A675EE452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC88E1C7-72C0-4BA1-B921-345A675EE452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC88E1C7-72C0-4BA1-B921-345A675EE452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC88E1C7-72C0-4BA1-B921-345A675EE452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8117B139-F07B-46FA-93C6-4D752FD5560A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8117B139-F07B-46FA-93C6-4D752FD5560A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8117B139-F07B-46FA-93C6-4D752FD5560A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8117B139-F07B-46FA-93C6-4D752FD5560A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270FEA29-7EA8-429F-A12C-4BBDAB1706C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270FEA29-7EA8-429F-A12C-4BBDAB1706C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270FEA29-7EA8-429F-A12C-4BBDAB1706C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270FEA29-7EA8-429F-A12C-4BBDAB1706C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC91BF16-634A-4664-BF8F-A7661EEA2E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC91BF16-634A-4664-BF8F-A7661EEA2E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC91BF16-634A-4664-BF8F-A7661EEA2E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC91BF16-634A-4664-BF8F-A7661EEA2E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578380FB-8644-4777-9AEC-441F78FF57A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578380FB-8644-4777-9AEC-441F78FF57A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578380FB-8644-4777-9AEC-441F78FF57A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578380FB-8644-4777-9AEC-441F78FF57A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC88E1C7-72C0-4BA1-B921-345A675EE452} = {A188D092-08DE-40A6-B7ED-1A9505E82215}
+		{8117B139-F07B-46FA-93C6-4D752FD5560A} = {A188D092-08DE-40A6-B7ED-1A9505E82215}
+		{D1AA9B2F-9E48-4B8A-B570-60122C2D0F63} = {A188D092-08DE-40A6-B7ED-1A9505E82215}
+		{270FEA29-7EA8-429F-A12C-4BBDAB1706C4} = {A188D092-08DE-40A6-B7ED-1A9505E82215}
+		{578380FB-8644-4777-9AEC-441F78FF57A6} = {A188D092-08DE-40A6-B7ED-1A9505E82215}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68DFC362-131C-40ED-8BA6-99404D9BD7BA}
+	EndGlobalSection
+EndGlobal

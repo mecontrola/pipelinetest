@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyName>Stock Analytics</AssemblyName>
+    <StartupObject>MeControla.StockAnalytics.WPF.App</StartupObject>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\active_icon_16.png" />
+    <None Remove="Resources\Images\add_icon_16.png" />
+    <None Remove="Resources\Images\delete_icon_16.png" />
+    <None Remove="Resources\Images\filter_icon_16.png" />
+    <None Remove="Resources\Images\play_icon_16.png" />
+    <None Remove="Resources\Images\save_icon_16.png" />
+    <None Remove="Resources\Images\splash-illustration.png" />
+    <None Remove="Resources\Images\splash-logo.png" />
+    <None Remove="Resources\Images\update_icon_16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\active_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\add_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\delete_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\filter_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\play_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\save_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\splash-illustration.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</Resource>
+    <Resource Include="Resources\Images\splash-logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\update_icon_16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MeControla\MeControla.Core.WPF\MeControla.Core.WPF.csproj" />
+    <ProjectReference Include="..\MeControla.StockAnalytics.Core\MeControla.StockAnalytics.Core.csproj" />
+    <ProjectReference Include="..\MeControla.StockAnalytics.Data.Dtos\MeControla.StockAnalytics.Data.Dtos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="**\*Properties.cs">
+      <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.Properties', '.cs'))</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>appsettings.json</DependentUpon>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
