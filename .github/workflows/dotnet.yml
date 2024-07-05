@@ -18,10 +18,12 @@ jobs:
       with:
         token: ${{ secrets.GIT_TOKEN }}
         repository: mecontrola/MeControla.Packages
+        path: ./MeControla
 
     - name: Move Files to Parent Directory
       run: |
-        mv ${{ github.workspace }}/MeControla/MeControla.Packages ${{ github.workspace }}/MeControla
+        ls -la ${{ github.workspace }}
+        ls -la ${{ github.workspace }}/MeControla
 
     - name: Checkout Branch
       uses: actions/checkout@v4
