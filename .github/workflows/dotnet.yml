@@ -22,8 +22,8 @@ jobs:
 
     - name: Move Files to Parent Directory
       run: |
-        ls -la ${{ github.workspace }}
-        ls -la ${{ github.workspace }}/MeControla
+        ls -l ${{ github.workspace }}
+        ls -l ${{ github.workspace }}/MeControla
 
     - name: Checkout Branch
       uses: actions/checkout@v4
