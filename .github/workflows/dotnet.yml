@@ -20,13 +20,9 @@ jobs:
         repository: mecontrola/MeControla.Packages
         path: ./MeControla
 
-    - name: Move Files to Parent Directory
+    - name: Move Files from MeControla.Packages to Parent Directory
       run: |
-        ls -l ${{ github.workspace }}
-        ls -l ${{ github.workspace }}/MeControla
         mv ${{ github.workspace }}/MeControla ${{ github.workspace }}/../MeControla
-        ls -l ${{ github.workspace }}
-        ls -l ${{ github.workspace }}/../MeControla
 
     - name: Checkout Branch
       uses: actions/checkout@v4
@@ -35,6 +31,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Restore MeControla.Packages Project
+      run: dotnet restore ${{ github.workspace }}/../MeControla/MeControla.sln --nologo --verbosity=minimal --force
+
+    - name: Build MeControla.Packages Project
+      run: dotnet build ${{ github.workspace }}/../MeControla/MeControla.sln --nologo --verbosity=minimal --no-restore --configuration ${{ matrix.build-configuration }}
 
     - name: Restore Dependencies
       run: dotnet restore --nologo --verbosity=minimal --force
