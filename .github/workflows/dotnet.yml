@@ -24,6 +24,9 @@ jobs:
       run: |
         ls -l ${{ github.workspace }}
         ls -l ${{ github.workspace }}/MeControla
+        mv ${{ github.workspace }}/MeControla/* ${{ github.workspace }}/../MeControla
+        ls -l ${{ github.workspace }}
+        ls -l ${{ github.workspace }}/../MeControla
 
     - name: Checkout Branch
       uses: actions/checkout@v4
