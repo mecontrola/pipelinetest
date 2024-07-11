@@ -6,43 +6,21 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
     strategy:
       matrix:
         dotnet-version: [ '8.0.x' ]
         build-configuration: [ 'Debug' ]
 
     steps:
-    - name: Clone MeControla.Packages
-      uses: actions/checkout@v4
+    - name: Load dependences
+      uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-dependences-action.yml@main
       with:
-        token: ${{ secrets.GIT_TOKEN }}
-        repository: mecontrola/MeControla.Packages
-        path: ./MeControla
-
-    - name: Move Files from MeControla.Packages to Parent Directory
-      run: |
-        mv ${{ github.workspace }}/MeControla ${{ github.workspace }}/../MeControla
-
-    - name: Checkout Branch
-      uses: actions/checkout@v4
-    
-    - name: Setup .NET ${{ matrix.dotnet-version }}
-      uses: actions/setup-dotnet@v1
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        dotnet-version: ${{ matrix.dotnet-version }}
+        build-configuration: ${{ matrix.build-configuration }}
+        
+    - name: Build repository
+      uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-action.yml@main
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-
-    - name: Restore MeControla.Packages Project
-      run: dotnet restore ${{ github.workspace }}/../MeControla/MeControla.sln --nologo --verbosity=minimal --force
-
-    - name: Build MeControla.Packages Project
-      run: dotnet build ${{ github.workspace }}/../MeControla/MeControla.sln --nologo --verbosity=minimal --no-restore --configuration ${{ matrix.build-configuration }}
-
-    - name: Restore Dependencies
-      run: dotnet restore --nologo --verbosity=minimal --force
-
-    - name: Build Solution
-      run: dotnet build --nologo --verbosity=minimal --no-restore --configuration ${{ matrix.build-configuration }}
-
-    - name: Test Solution
-      run: dotnet test --nologo --verbosity=minimal --no-restore --no-build --configuration ${{ matrix.build-configuration }}
+        build-configuration: ${{ matrix.build-configuration }}
