@@ -6,21 +6,17 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
     strategy:
       matrix:
         dotnet-version: [ '8.0.x' ]
         build-configuration: [ 'Debug' ]
 
-    steps:
-    - name: Load dependences
       uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-dependences-action.yml@main
       with:
         GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         dotnet-version: ${{ matrix.dotnet-version }}
         build-configuration: ${{ matrix.build-configuration }}
-        
-    - name: Build repository
+
       uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-action.yml@main
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
