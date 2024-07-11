@@ -5,15 +5,15 @@ on:
     branches: [ main, develop ]
 
 env:
-  DOTNET_VERSION: [ '8.0.x' ]
-  BUILD_CONFIGURATION: [ 'Debug' ]
+  DOTNET_VERSION: '8.0.x'
+  BUILD_CONFIGURATION: 'Debug'
 
 jobs:
   dependences:
     strategy:
       matrix:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
-        build-configuration: ${{ env.BUILD_CONFIGURATION }}
+        dotnet-version: [${{ env.DOTNET_VERSION }}]
+        build-configuration: [${{ env.BUILD_CONFIGURATION }}]
     name: Load dependences
     uses: mecontrola/mecontrola-actions/.github/workflows/dotnet-dependences-action.yml@main
     with:
@@ -24,8 +24,8 @@ jobs:
   build:
     strategy:
       matrix:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
-        build-configuration: ${{ env.BUILD_CONFIGURATION }}
+        dotnet-version: [${{ env.DOTNET_VERSION }}]
+        build-configuration: [${{ env.BUILD_CONFIGURATION }}]
     name: Build repository
     uses: mecontrola/mecontrola-actions/.github/workflows/dotnet-action.yml@main
     with:
