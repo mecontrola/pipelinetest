@@ -4,20 +4,30 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+env:
+  DOTNET_VERSION: [ '8.0.x' ]
+  BUILD_CONFIGURATION: [ 'Debug' ]
+
 jobs:
+  dependences:
+    strategy:
+      matrix:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        build-configuration: ${{ env.BUILD_CONFIGURATION }}
+    name: Load dependences
+    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-dependences-action.yml@main
+    with:
+      GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+      dotnet-version: ${{ matrix.dotnet-version }}
+      build-configuration: ${{ matrix.build-configuration }}
+
   build:
     strategy:
       matrix:
-        dotnet-version: [ '8.0.x' ]
-        build-configuration: [ 'Debug' ]
-
-      uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-dependences-action.yml@main
-      with:
-        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-        dotnet-version: ${{ matrix.dotnet-version }}
-        build-configuration: ${{ matrix.build-configuration }}
-
-      uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-action.yml@main
-      with:
-        dotnet-version: ${{ matrix.dotnet-version }}
-        build-configuration: ${{ matrix.build-configuration }}
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        build-configuration: ${{ env.BUILD_CONFIGURATION }}
+    name: Build repository
+    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-action.yml@main
+    with:
+      dotnet-version: ${{ matrix.dotnet-version }}
+      build-configuration: ${{ matrix.build-configuration }}
