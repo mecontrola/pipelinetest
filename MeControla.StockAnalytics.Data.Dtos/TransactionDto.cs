@@ -1,0 +1,20 @@
+﻿using MeControla.Core.Data.Dtos;
+using System;
+
+namespace MeControla.StockAnalytics.Data.Dtos
+{
+    public class TransactionDto : IDto
+    {
+        public Guid Id { get; set; }
+        public BrokerLiteDto Broker { get; set; }
+        public TickerLiteDto Ticker { get; set; }
+        public WalletLiteDto Wallet { get; set; }
+        public DateTime Date { get; set; }
+        public bool IsBuy { get; set; }
+        public long Amount { get; set; }
+        public decimal Price { get; set; }
+        public decimal Total { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+    }
+}
