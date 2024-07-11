@@ -15,7 +15,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         build-configuration: ${{ env.BUILD_CONFIGURATION }}
     name: Load dependences
-    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-dependences-action.yml@main
+    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet-dependences-action.yml@main
     with:
       GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       dotnet-version: ${{ matrix.dotnet-version }}
@@ -27,7 +27,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
         build-configuration: ${{ env.BUILD_CONFIGURATION }}
     name: Build repository
-    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet/dotnet-action.yml@main
+    uses: mecontrola/mecontrola-actions/.github/workflows/dotnet-action.yml@main
     with:
       dotnet-version: ${{ matrix.dotnet-version }}
       build-configuration: ${{ matrix.build-configuration }}
